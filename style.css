@@ -1,0 +1,137 @@
+:root {
+    --primary-color1: hsl(0, 0%, 17%);
+    --primary-color2: hsl(0, 0%, 59%);
+    --base-font: 18px;
+    --font-weight-small: 400;
+    --font-weight-medium: 500;
+    --font-weight-big: 700;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 100vw; 
+    background-color: black; 
+    font-size: var(--base-font);
+    font-family: 'Rubik', sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    background-image: url(./images/pattern-bg.png);
+    background-size: cover;
+    padding: 1rem 0;
+    position: relative;
+}
+
+.heading {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: calc(var(--base-font) *1.3);
+}
+
+.search-div {
+    display: flex;
+    margin: auto;
+    align-items: stretch;
+    margin-bottom: 11rem;
+    width: 90%;
+    max-width: 500px;
+}
+
+#search {
+    width: 85%;
+    padding: 1rem 1.5rem;
+    border-radius: 15px 0px 0px 15px;
+    border: none;
+}
+
+.search-btn {
+    background-color: black;
+    width: 15%;
+    border-radius: 0 15px 15px 0;
+    height: 3.5rem;
+    border: none;
+}
+
+#search:hover, .search-btn:hover {
+    cursor: pointer;
+}
+
+#search:focus, .search-btn:focus {
+    cursor: pointer;
+    outline: none;
+}
+
+.search-btn:active, .search-btn:hover {
+    background-color: var(--primary-color1);
+}
+
+
+.container {
+    position: absolute;
+    text-align: center;        
+    padding: 1.5rem 2rem 0.05rem 2rem;
+    background-color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 20px;
+    width: 90%;
+    z-index: 1000;
+}
+main {
+    z-index: -1;
+}
+
+.cont-div {
+    margin-bottom: 1.5rem;
+}
+
+.cont-head {
+    text-transform: uppercase;
+    font-size: .6em;
+    color: var(--primary-color2);
+    font-weight: var(--font-weight-big);   
+    margin-bottom: 1em;
+    letter-spacing: 0.05rem;
+}
+
+.cont-content {
+    font-weight: var(--font-weight-big);
+}
+
+#map { 
+    min-height: 700px; 
+}
+
+
+
+
+@media screen and (min-width: 760px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        justify-content: start;
+        gap: 40px;
+        text-align: left;
+        max-width: 70%;
+        left: 50%;
+        top: 75%;
+        transform: translate(-50%, 0);
+        border-radius: 15px;
+    }
+    .search-div {
+        width: 50%;
+        max-width: 500px;
+        margin-bottom: 5rem;
+    }
+    #map {
+        height: 600px;
+    }
+}
